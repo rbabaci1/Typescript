@@ -10,6 +10,9 @@ function NewReminder({ onAddReminder }: NewReminderProps): JSX.Element {
 	const submitForm = (e: React.FormEvent) => {
 		e.preventDefault();
 
+		// make sure the user has entered a title
+		if (!title) return;
+
 		onAddReminder(title);
 		setTitle("");
 	};
